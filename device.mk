@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-DEVICE_PATH := device/blackberry/athena
+DEVICE_PATH := device/blackberry/luna
 
 # Set Shipping API level
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_o.mk)
@@ -25,5 +25,5 @@ $(call inherit-product, device/blackberry/sdm660-common/common.mk)
 $(call inherit-product, frameworks/native/build/phone-xhdpi-4096-dalvik-heap.mk)
 
 # Get non-open-source specific aspects
-$(call inherit-product, vendor/blackberry/athena/athena-vendor.mk)
+$(call inherit-product, vendor/blackberry/luna/luna-vendor.mk)
 

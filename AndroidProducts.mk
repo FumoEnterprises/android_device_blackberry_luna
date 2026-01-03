@@ -15,9 +15,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_athena.mk
+    $(LOCAL_DIR)/lineage_luna.mk
 
 COMMON_LUNCH_CHOICES := \
-    lineage_athena-eng \
-    lineage_athena-user \
-    lineage_athena-userdebug
+    lineage_luna-eng \
+    lineage_luna-user \
+    lineage_luna-userdebug

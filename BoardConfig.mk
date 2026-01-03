@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-DEVICE_PATH := device/blackberry/athena
+DEVICE_PATH := device/blackberry/luna
 
 # Inherit from BlackBerry sdm660-common
 -include device/blackberry/sdm660-common/BoardConfigCommon.mk
@@ -24,7 +24,7 @@ TARGET_CPU_VARIANT_RUNTIME := cortex-a73
 TARGET_2ND_CPU_VARIANT_RUNTIME := cortex-a73
 
 # Bootloader
-TARGET_BOOTLOADER_BOARD_NAME := sdm660
+TARGET_BOOTLOADER_BOARD_NAME := sdm636
 
 # Display
 TARGET_SCREEN_DENSITY := 434
