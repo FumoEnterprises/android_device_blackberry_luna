@@ -28,10 +28,33 @@ namespace_imports = [
     'vendor/blackberry/sdm660-common',
 ]
 
+blob_fixups: blob_fixups_user_type =        {
+    # Protobuf for audio and goodix
+    ('vendor/lib/libwebrtc_audio_preprocessing.so',
+     'vendor/lib64/libwebrtc_audio_preprocessing.so'
+     ): blob_fixup()
+        .replace_needed('libprotobuf-cpp-lite.so', 'libprotobuf-cpp-lite-v29.so'),
+
+    'vendor/lib64/hw/gxfingerprint.default.so': blob_fixup()
+        .replace_needed('libprotobuf-cpp-lite.so', 'libprotobuf-cpp-lite-v29.so')
+        .remove_needed('libandroid_runtime.so')
+        .remove_needed('libkeystore_binder.so')
+        .remove_needed('libbacktrace.so')
+        .remove_needed('libunwind.so')
+        .remove_needed('libkeystore_binder.so')
+        .remove_needed('libsoftkeymasterdevice.so')
+        .remove_needed('libsoftkeymaster.so')
+        .remove_needed('libkeymaster_messages.so')
+        .replace_needed('libstdc++.so', 'libstdc++_vendor.so')
+        .add_needed('libbinder_shim.so')
+        .binary_regex_replace(b'/system/etc/firmware', b'/vendor/firmware\x00\x00\x00\x00'),
+}  # fmt: skip
+
 module = ExtractUtilsModule(
     'luna',
     'blackberry',
     namespace_imports=namespace_imports,
+    blob_fixups=blob_fixups,
 )
 
 if __name__ == '__main__':
