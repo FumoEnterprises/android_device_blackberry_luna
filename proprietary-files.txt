@@ -1878,6 +1878,30 @@ vendor/lib64/libmmsw_math.so;DISABLE_CHECKELF;DISABLE_DEPS
 vendor/lib64/libmmsw_opencl.so;DISABLE_CHECKELF;DISABLE_DEPS
 vendor/lib64/libmmsw_platform.so;DISABLE_CHECKELF;DISABLE_DEPS
 
+# Fingerprint firmware
+vendor/firmware/goodixfp.mdt
+vendor/firmware/goodixfp.b02
+vendor/firmware/goodixfp.b07
+vendor/firmware/goodixfp.b04
+vendor/firmware/goodixfp.b01
+vendor/firmware/goodixfp.b03
+vendor/firmware/goodixfp.b00
+vendor/firmware/goodixfp.b05
+vendor/firmware/goodixfp.b06
+
+# Fingerprint
+-vendor/app/QFingerprintService/QFingerprintService.apk
+vendor/bin/qfp-daemon;DISABLE_CHECKELF
+vendor/lib/vendor.qti.hardware.fingerprint@1.0.so
+vendor/lib64/vendor.qti.hardware.fingerprint@1.0.so
+vendor/lib64/libqfp-service.so
+vendor/lib64/libvendor.goodix.hardware.fingerprint@1.0.so
+vendor/lib64/libvendor.goodix.hardware.fingerprint@1.0-service.so
+vendor/lib64/libgoodixfingerprintd_binder.so
+vendor/lib64/libgf_hal.so
+vendor/lib64/hw/fingerprint.gf3206.so;FIX_SONAME
+vendor/lib64/libgf_ca.so
+
 # GPU firmware
 vendor/firmware/a512_zap.b00
 vendor/firmware/a512_zap.b01

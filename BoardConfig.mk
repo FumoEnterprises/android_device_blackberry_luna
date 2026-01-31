@@ -39,9 +39,6 @@ TARGET_SCREEN_DENSITY := 350
 # Kernel
 TARGET_KERNEL_CONFIG := luna-perf_defconfig
 
-# Display
-TARGET_SCREEN_DENSITY := 429
-
 # Properties
 TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
 

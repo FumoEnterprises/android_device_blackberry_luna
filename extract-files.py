@@ -35,10 +35,18 @@ blob_fixups: blob_fixups_user_type =        {
      ): blob_fixup()
         .replace_needed('libprotobuf-cpp-lite.so', 'libprotobuf-cpp-lite-v29.so'),
 
-    'vendor/lib64/hw/gxfingerprint.default.so': blob_fixup()
+    ('vendor/lib64/hw/gxfingerprint.default.so',
+     'vendor/lib64/libgf_ca.so',
+     'vendor/lib64/libgf_hal.so',
+     'vendor/lib64/libvendor.goodix.hardware.fingerprint@1.0.so',
+     'vendor/lib64/libvendor.goodix.hardware.fingerprint@1.0-service.so',
+     'vendor/lib64/libgoodixfingerprintd_binder.so',
+     'vendor/lib64/hw/fingerprint.gf3206.so'
+        ): blob_fixup()
         .replace_needed('libprotobuf-cpp-lite.so', 'libprotobuf-cpp-lite-v29.so')
         .remove_needed('libandroid_runtime.so')
         .remove_needed('libkeystore_binder.so')
+        .remove_needed('ld-android.so')
         .remove_needed('libbacktrace.so')
         .remove_needed('libunwind.so')
         .remove_needed('libkeystore_binder.so')
@@ -46,6 +54,7 @@ blob_fixups: blob_fixups_user_type =        {
         .remove_needed('libsoftkeymaster.so')
         .remove_needed('libkeymaster_messages.so')
         .replace_needed('libstdc++.so', 'libstdc++_vendor.so')
+        .add_needed('libhidlbase.so')
         .add_needed('libbinder_shim.so')
         .binary_regex_replace(b'/system/etc/firmware', b'/vendor/firmware\x00\x00\x00\x00'),
 }  # fmt: skip
